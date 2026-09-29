@@ -21,7 +21,7 @@ for key in PK KEK db; do
   mkdir "keys/${key}"
 
   # Make new secure boot keys (PK, KEK, db).
-  openssl req -new -x509 -nodes -subj "/CN=secureblue ${key} CA $(date +%Y)/" \
+  openssl req -new -x509 -nodes -subj "/CN=abacus ${key} CA $(date +%Y)/" \
     -keyout "keys/${key}/${key}.key" -out "keys/${key}/${key}.pem" &> /dev/null
   openssl x509 -outform DER -in "keys/${key}/${key}.pem" -out "keys/${key}/${key}.der"
 
