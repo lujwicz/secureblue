@@ -19,6 +19,9 @@ case "${image_ref}" in
     ghcr.io/secureblue/*)
         source_uri='github.com/secureblue/secureblue'
         ;;
+    ghcr.io/lujwicz/*)
+        source_uri='github.com/lujwicz/secureblue'
+        ;;
     *)
         echo "WARNING: Unknown image reference '${image_ref}'; unable to check provenance."
         exit 1

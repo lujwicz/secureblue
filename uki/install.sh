@@ -8,7 +8,7 @@ set -euo pipefail
 shopt -s nullglob
 cd "$(dirname "$0")"
 
-github_repo_owner="secureblue"
+github_repo_owner="lujwicz"
 github_repo_name="secureblue"
 ghcr_tag="uki"
 
