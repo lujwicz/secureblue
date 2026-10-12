@@ -22,7 +22,7 @@ if [[ "${1:-}" == "--dev" ]]; then
 else
   ca_date="$(date +%Y)"
   ca_expiry_days=3650
-  ca_title="secureblue"
+  ca_title="abacus"
 
   if [[ -d uki/keys/ || -d secrets/ ]]; then
     echo "A secrets directory already exists in uki/keys/ or secrets/."
