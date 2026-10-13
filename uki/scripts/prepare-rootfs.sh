@@ -43,6 +43,9 @@ if [[ "$(rpm -qa | grep -c grub2-efi-ia32)" -ne 0 ]]; then
 fi
 rpm -e --nodeps "${grub_packages[@]}"
 
+# Greenboot stores it's stuff in grubenv, useless without GRUB
+rpm -qa 'greenboot*' | xargs -r dnf remove -y
+
 # Add kargs to bootc kargs.d; see uki.sh where we parse these for the UKI.
 cat > "/usr/lib/bootc/kargs.d/10-rootfs.toml" << 'EOF'
 kargs = [
