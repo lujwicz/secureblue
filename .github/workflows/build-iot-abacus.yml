@@ -41,7 +41,6 @@ jobs:
     secrets:
       SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
       KERNEL_PRIVKEY: ${{ secrets.KERNEL_PRIVKEY }}
-      UKI_PCR_KEY: ${{ secrets.UKI_PCR_KEY }}
 
   iot-main-sealed:
     name: Build iot main sealed
@@ -61,3 +60,4 @@ jobs:
     secrets:
       COSIGN_KEY: ${{ secrets.SIGNING_SECRET }}
       UKI_DB_KEY: ${{ secrets.UKI_DB_KEY }}
+      UKI_PCR_KEY: ${{ secrets.UKI_PCR_KEY }}
