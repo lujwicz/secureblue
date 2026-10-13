@@ -26,6 +26,13 @@ if [[ $- == *i* && -n "${BASH_VERSION:-}" ]]; then
         printf '%s' "${ps1_prefix[@]@P}"
     }
 
+    # In login shells /etc/profile runs this thingy before /etc/bashrc
+    # which sets PS1 as '[\u@\h \W]\$ ' only if PS1 is the bash fallback prompt
+    # Need to apply it here first
+    if [[ "${PS1:-}" == '\s-\v\$ ' ]]; then
+        PS1='[\u@\h \W]\$ '
+    fi
+
     # shellcheck disable=SC2154
     PS1='$(__scbl_ps1_exit_code "$?")'"${PS1:-}"
 fi
