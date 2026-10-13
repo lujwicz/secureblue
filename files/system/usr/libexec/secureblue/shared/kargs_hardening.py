@@ -15,8 +15,6 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
-import sandbox
-
 from .secure_boot import Bootloader
 from .utils import BootcBackend
 
@@ -71,6 +69,7 @@ def deserialize(request: str) -> SetKargs:
 
 def apply_kargs(*, add: Sequence[str], remove: Sequence[str]) -> None:
     """Add and remove kernel arguments. Ignores remove kargs if not set."""
+    import sandbox
     bootc_backend = BootcBackend.from_running()
     bootloader = Bootloader.from_running()
 
