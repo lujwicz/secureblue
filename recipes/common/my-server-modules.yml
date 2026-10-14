@@ -10,3 +10,9 @@ modules:
       packages:
         - caddy
         - anubis
+
+  - type: files
+    source: ghcr.io/blue-build/modules@sha256:f1273b17987eed439b0feff77bf4b7f1c734e6f77607dc99c9de9d9070555c7a
+    files:
+      - source: system/my-server
+        destination: /
